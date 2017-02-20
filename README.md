@@ -1,0 +1,5 @@
+This project is designed to be able to show the evolution of behaviour in Neural Networks through the medium of Microbe Evolution.
+
+In the current configuration, each time the simulation is run, 100 microbes will be spawned each with random neural networks (both weightings and configuration of hidden layers). The simulation allows a microbe to reproduce when it has found enough food and its energy rises above a certain point. During this birthing process, the old neural network of the parent is taken and passed through a genetic algorithm which has a chance to change the weightings of the network and this create different behaviour in the microbes. In this way, we can evolve Microbes in an unsupervised way to hunt for food. The neural networks are randomly generated and therefore the behaviour of each microbe is random upon start up.
+
+The different coloured microbes represent each different strain of Microbe at start up, for example, at startup there will be 100 different strains and this is represented by 100 randomly generated colours. This allows us to track the development of each straing of microbe and watch as behaviour develops.
