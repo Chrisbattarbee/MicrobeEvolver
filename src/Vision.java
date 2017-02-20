@@ -43,6 +43,7 @@ public class Vision {
         closeMicrobeEntities =
                 closeMicrobeEntities.stream()
                                     .filter(x -> x != microbe)
+                                    .filter(x -> !(x instanceof Microbe))
                                     .collect(Collectors.toList());
 
         Point tempDir = microbe.getViewDirection().rotate(-((Microbe.viewDivisions + 1) * microbe.getFieldOfVision()));

@@ -8,7 +8,7 @@ public class GameManager {
   private List<Entity> entities;
   private Terrain terrain;
 
-  private final double foodThreshold = 0.90;
+  private final double foodThreshold = 0.70;
   private int ticks;
 
   private boolean render = true;
