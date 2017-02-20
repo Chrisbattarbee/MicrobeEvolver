@@ -32,11 +32,10 @@ public class MainLoop extends Frame {
 
       @Override
       public void keyPressed(KeyEvent e) {
-
         int keyCode = e.getKeyCode();
 
         // Not rendering increases simulation speed
-        if (keyCode == e.VK_SPACE) {
+        if (keyCode == KeyEvent.VK_SPACE) {
           gameManager.setRender(!gameManager.getRender());
         }
       }
@@ -45,12 +44,12 @@ public class MainLoop extends Frame {
 
     init();
 
-    this.addWindowListener( new WindowAdapter() {
+    this.addWindowListener(new WindowAdapter() {
       @Override
       public void windowClosing(WindowEvent we) {
         System.exit(0);
       }
-    } );
+    });
 
     runLoop();
   }
@@ -60,10 +59,8 @@ public class MainLoop extends Frame {
   }
 
   public void runLoop() {
-    Thread loopThread = new Thread()
-    {
-      public void run()
-      {
+    Thread loopThread = new Thread() {
+      public void run() {
         loop();
       }
     };
@@ -93,21 +90,20 @@ public class MainLoop extends Frame {
   }
 
   public void paint(Graphics g) {
-    /*
-     * Clear the screen from the previous draw call
-     */
+
+    // Clear the screen from the previous draw call
     BufferStrategy bs = getBufferStrategy();
-    if (bs == null){
+    if (bs == null) {
       createBufferStrategy(2);
       return;
     }
 
     g = bs.getDrawGraphics();
 
-    //clear screen
+    // Clear screen
     g.clearRect(0, 0, getWidth(), getHeight());
 
-    //Draw gameState
+    // Draw gameState
     if (g != null) {
       gameManager.tick(g);
       render();
